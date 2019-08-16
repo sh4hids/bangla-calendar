@@ -1,0 +1,40 @@
+{
+  "name": "bn-number-utils",
+  "version": "0.2.0",
+  "description": "A small library to convert any valid javascript date to bangla date.",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "scripts": {
+    "prebuild": "npm run test",
+    "build": "rollup --config",
+    "pretest": "rollup --config",
+    "test": "jest"
+  },
+  "files": [
+    "cjs/*",
+    "esm/*",
+    "umd/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sh4hids/bn-number-utils.git"
+  },
+  "keywords": [
+    "Bengali",
+    "numbers",
+    "number",
+    "bengali number",
+    "converter"
+  ],
+  "author": "Shahidul Islam Majumder <hello@shahid.pro>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sh4hids/bn-number-utils/issues"
+  },
+  "homepage": "https://github.com/sh4hids/bn-number-utils#readme",
+  "devDependencies": {
+    "jest": "^24.5.0",
+    "rollup": "^1.7.0",
+    "rollup-plugin-terser": "^4.0.4"
+  }
+}
