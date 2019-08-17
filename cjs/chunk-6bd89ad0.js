@@ -1,4 +1,6 @@
-export const convertNumbers = function(data) {
+'use strict';
+
+const convertNumbers = function(data) {
   const numbers = {
     0: '০',
     1: '১',
@@ -32,7 +34,7 @@ export const convertNumbers = function(data) {
   return result;
 };
 
-export const banglaMonths = [
+const banglaMonths = [
   'বৈশাখ',
   'জ্যৈষ্ঠ',
   'আষাঢ়',
@@ -47,6 +49,10 @@ export const banglaMonths = [
   'চৈত্র',
 ];
 
-export const isLeapYear = function(year = 0) {
+const isLeapYear = function(year = 0) {
   return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0;
 };
+
+exports.banglaMonths = banglaMonths;
+exports.convertNumbers = convertNumbers;
+exports.isLeapYear = isLeapYear;

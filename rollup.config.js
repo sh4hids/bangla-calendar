@@ -1,5 +1,5 @@
 import { terser } from 'rollup-plugin-terser';
-const pkgName = 'bn-number-utils';
+const pkgName = 'bangla-calendar';
 
 export default [
   {
@@ -8,15 +8,16 @@ export default [
     output: {
       file: `umd/${pkgName}.js`,
       format: 'umd',
-      name: 'bnNumberUtils',
+      name: 'banglaCalendar',
       esModule: false,
     },
   },
   {
     input: {
       index: 'src/main.js',
-      convertNumbers: 'src/convert-numbers.js',
-      convertToTaka: 'src/convert-to-taka.js',
+      getDay: 'src/getDay.js',
+      getMonth: 'src/getMonth.js',
+      getYear: 'src/getYear.js',
     },
     output: [
       {

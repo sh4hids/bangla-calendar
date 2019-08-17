@@ -1,12 +1,9 @@
-import './chunk-98e7b05c.js';
-import getDay from './getDay.js';
-export { default as getDay } from './getDay.js';
-import getMonth from './getMonth.js';
-export { default as getMonth } from './getMonth.js';
-import getYear from './getYear.js';
-export { default as getYear } from './getYear.js';
+import { convertNumbers } from './utils';
+import getDay from './getDay';
+import getMonth from './getMonth';
+import getYear from './getYear';
 
-function getDate(date = new Date(), options = {}) {
+export default function(date = new Date(), options = {}) {
   const format = options.format || 'D MMMM, YYYY';
 
   let formattedDate = format.replace(/DD|D/gi, fmt => {
@@ -40,5 +37,3 @@ function getDate(date = new Date(), options = {}) {
 
   return formattedDate;
 }
-
-export { getDate };

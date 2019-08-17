@@ -1,53 +1,71 @@
-export default function(date = new Date(), options = {}) {
+import { b as convertNumbers, c as banglaMonths } from './chunk-98e7b05c.js';
+
+const formatMonth = function(month = 0, format = 'MMMM') {
+  let m = (month + 1).toString();
+  switch (format) {
+    case 'M':
+      return convertNumbers(m);
+    case 'MM':
+      m = m.length === 1 ? `0${m}` : m;
+      return convertNumbers(m);
+    default:
+      return banglaMonths[month];
+  }
+};
+
+function getMonth(date = new Date(), options = {}) {
   const day = date.getUTCDate();
   const month = date.getMonth();
   const year = date.getFullYear();
+  const format = options.format || 'MMMM';
 
   if ((month === 3 && day > 13) || (month === 4 && day < 15)) {
-    return 'বৈশাখ';
+    return formatMonth(0, format);
   }
 
   if ((month === 4 && day > 14) || (month === 5 && day < 15)) {
-    return 'জ্যৈষ্ঠ';
+    return formatMonth(1, format);
   }
 
   if ((month === 5 && day > 14) || (month === 6 && day < 16)) {
-    return 'আষাঢ়';
+    return formatMonth(2, format);
   }
 
   if ((month === 6 && day > 15) || (month === 7 && day < 16)) {
-    return 'শ্রাবণ';
+    return formatMonth(3, format);
   }
 
   if ((month === 7 && day > 15) || (month === 8 && day < 16)) {
-    return 'ভাদ্র';
+    return formatMonth(4, format);
   }
 
   if ((month === 8 && day > 15) || (month === 9 && day < 16)) {
-    return 'আশ্বিন';
+    return formatMonth(5, format);
   }
 
   if ((month === 9 && day > 15) || (month === 10 && day < 15)) {
-    return 'কার্তিক';
+    return formatMonth(6, format);
   }
 
   if ((month === 10 && day > 14) || (month === 11 && day < 15)) {
-    return 'অগ্রহায়ণ';
+    return formatMonth(7, format);
   }
 
   if ((month === 11 && day > 14) || (month === 0 && day < 14)) {
-    return 'পৌষ';
+    return formatMonth(8, format);
   }
 
   if ((month === 0 && day > 13) || (month === 1 && day < 13)) {
-    return 'মাঘ';
+    return formatMonth(9, format);
   }
 
   if ((month === 1 && day > 12) || (month === 2 && day < 15)) {
-    return 'ফাল্গুন';
+    return formatMonth(10, format);
   }
 
   if ((month === 2 && day > 14) || (month === 3 && day < 14)) {
-    return 'চৈত্র';
+    return formatMonth(11, format);
   }
 }
+
+export default getMonth;
