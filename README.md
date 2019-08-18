@@ -1,4 +1,4 @@
-# bangla-calendar
+# 📅 bangla-calendar
 
 A small JavaScript library to convert any valid JavaScript date to Bangla date.
 
