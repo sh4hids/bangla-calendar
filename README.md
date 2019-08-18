@@ -118,6 +118,8 @@ getYear(date1, { format: 'YYYYb' }); //output: ১৪২৬ (বঙ্গাব�
 | date      | JavaScript date | `new Date('August 16 2019 06:22:03')` |
 | options   | object          | `{ format: 'YYYY' }`                  |
 
+## Options
+
 #### format
 
 | Unit  | Token | Result examples                                    |
