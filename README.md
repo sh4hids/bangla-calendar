@@ -1,4 +1,4 @@
-# 📅 bangla-calendar
+# 📅 bangla-calendar [![Stars](https://img.shields.io/github/stars/sh4hids/bangla-calendar.svg)](https://github.com/sh4hids/bangla-calendar) · [![License](https://img.shields.io/github/license/sh4hids/bangla-calendar.svg)](https://github.com/sh4hids/bangla-calendar) · [![GitHub issues](https://img.shields.io/github/issues/sh4hids/bangla-calendar.svg?style=popout)](https://github.com/sh4hids/bangla-calendar/issues) · [![Build Status](https://travis-ci.com/sh4hids/bangla-calendar.svg?branch=master)](https://travis-ci.com/sh4hids/bangla-calendar)
 
 A small JavaScript library to convert any valid JavaScript date to Bangla date.
 
