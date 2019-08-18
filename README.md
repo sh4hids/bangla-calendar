@@ -21,10 +21,10 @@ import { getDate, getDay, getMonth, getYear } from 'bangla-calendar';
 ```
 
 ```javascript
-const now = new Date('August 16 2019 06:22:03');
+const date1 = new Date('August 16 2019 06:22:03');
 
-getDate(now); //output: ১ ভাদ্র, ১৪২৬
-getDate(now, { format: 'DD/MM/YYYY' }); //output: ০১/০৫/১৪২৬
+getDate(date1); //output: ১ ভাদ্র, ১৪২৬
+getDate(date1, { format: 'DD/MM/YYYY' }); //output: ০১/০৫/১৪২৬
 ```
 
 ## Methods
@@ -36,14 +36,14 @@ This method returns full Bangla date for a given date.
 #### Examples
 
 ```javascript
-const now = new Date('August 16 2019 06:22:03');
+const date1 = new Date('August 16 2019 06:22:03');
 
-getDate(now); //output: ১ ভাদ্র, ১৪২৬
-getDate(now, { format: 'DD/MM/YY' }); //output: ০১/০৫/২৬
-getDate(now, { format: 'DD/MM/YYYY' }); //output: ০১/০৫/১৪২৬
-getDate(now, { format: 'DD/MM/YYYYb' }); //output: ০১/০৫/১৪২৬ (বঙ্গাব্দ)
-getDate(now, { format: 'D MMMM, YYYY' }); //output: ১ ভাদ্র, ১৪২৬
-getDate(now, { format: 'D MMMM, YYYYb' }); //output: ১ ভাদ্র, ১৪২৬ (বঙ্গাব্দ)
+getDate(date1); //output: ১ ভাদ্র, ১৪২৬
+getDate(date1, { format: 'DD/MM/YY' }); //output: ০১/০৫/২৬
+getDate(date1, { format: 'DD/MM/YYYY' }); //output: ০১/০৫/১৪২৬
+getDate(date1, { format: 'DD/MM/YYYYb' }); //output: ০১/০৫/১৪২৬ (বঙ্গাব্দ)
+getDate(date1, { format: 'D MMMM, YYYY' }); //output: ১ ভাদ্র, ১৪২৬
+getDate(date1, { format: 'D MMMM, YYYYb' }); //output: ১ ভাদ্র, ১৪২৬ (বঙ্গাব্দ)
 ```
 
 #### Parameters
@@ -60,11 +60,11 @@ This method returns the day of the Bangla month of the given date.
 #### Examples
 
 ```javascript
-const now = new Date('August 16 2019 06:22:03');
+const date1 = new Date('August 16 2019 06:22:03');
 
-getDay(now); //output: ১
-getDay(now, { format: 'DD' }); //output: ০১
-getDay(now, { format: 'D' }); //output: ১
+getDay(date1); //output: ১
+getDay(date1, { format: 'DD' }); //output: ০১
+getDay(date1, { format: 'D' }); //output: ১
 ```
 
 #### Parameters
@@ -81,12 +81,12 @@ This method returns the Bangla month of a given date.
 #### Examples
 
 ```javascript
-const now = new Date('August 16 2019 06:22:03');
+const date1 = new Date('August 16 2019 06:22:03');
 
-getMonth(now); //output: ভাদ্র
-getMonth(now, { format: 'M' }); //output: ১
-getMonth(now, { format: 'MM' }); //output: ০১
-getMonth(now, { format: 'MMMM' }); //output: ভাদ্র
+getMonth(date1); //output: ভাদ্র
+getMonth(date1, { format: 'M' }); //output: ১
+getMonth(date1, { format: 'MM' }); //output: ০১
+getMonth(date1, { format: 'MMMM' }); //output: ভাদ্র
 ```
 
 #### Parameters
@@ -103,12 +103,12 @@ This method returns the Bangla year of a given date.
 #### Examples
 
 ```javascript
-const now = new Date('August 16 2019 06:22:03');
+const date1 = new Date('August 16 2019 06:22:03');
 
-getYear(now); //output: ১৪২৬
-getYear(now, { format: 'YY' }); //output: ২৬
-getYear(now, { format: 'YYYY' }); //output: ১৪২৬
-getYear(now, { format: 'YYYYb' }); //output: ১৪২৬ (বঙ্গাব্দ)
+getYear(date1); //output: ১৪২৬
+getYear(date1, { format: 'YY' }); //output: ২৬
+getYear(date1, { format: 'YYYY' }); //output: ১৪২৬
+getYear(date1, { format: 'YYYYb' }); //output: ১৪২৬ (বঙ্গাব্দ)
 ```
 
 #### Parameters
