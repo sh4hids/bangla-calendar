@@ -26,10 +26,12 @@ export default function(date = new Date(), options = {}) {
     }
   });
 
-  formattedDate = formattedDate.replace(/YYYY|YY/gi, fmt => {
+  formattedDate = formattedDate.replace(/YYYYb|YYYY|YY/gi, fmt => {
     switch (fmt) {
       case 'YY':
         return getYear(date, { format: 'YY' });
+      case 'YYYYb':
+        return getYear(date, { format: 'YYYYb' });
       default:
         return getYear(date);
     }
