@@ -120,7 +120,7 @@ getYear(date1, { format: 'YYYYb' }); //output: ১৪২৬ (বঙ্গাব�
 
 ## Options
 
-#### format
+#### format (string)
 
 | Unit  | Token | Result examples                                    |
 | ----- | ----- | -------------------------------------------------- |
