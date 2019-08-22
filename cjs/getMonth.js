@@ -1,17 +1,17 @@
 'use strict';
 
-var __chunk_1 = require('./chunk-6bd89ad0.js');
+var utils = require('./utils-b414064a.js');
 
 const formatMonth = function(month = 0, format = 'MMMM') {
   let m = (month + 1).toString();
   switch (format) {
     case 'M':
-      return __chunk_1.convertNumbers(m);
+      return utils.convertNumbers(m);
     case 'MM':
       m = m.length === 1 ? `0${m}` : m;
-      return __chunk_1.convertNumbers(m);
+      return utils.convertNumbers(m);
     default:
-      return __chunk_1.banglaMonths[month];
+      return utils.banglaMonths[month];
   }
 };
 

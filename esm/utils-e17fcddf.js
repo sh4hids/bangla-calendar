@@ -47,8 +47,18 @@ const banglaMonths = [
   'চৈত্র',
 ];
 
+const banglaWeekDays = [
+  'রবি',
+  'সোম',
+  'মঙ্গল',
+  'বুধ',
+  'বৃহস্পতি',
+  'শুক্র',
+  'শনি',
+];
+
 const isLeapYear = function(year = 0) {
   return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0;
 };
 
-export { isLeapYear as a, convertNumbers as b, banglaMonths as c };
+export { banglaWeekDays as a, banglaMonths as b, convertNumbers as c, isLeapYear as i };

@@ -1,4 +1,4 @@
-import './chunk-98e7b05c.js';
+import { a as banglaWeekDays } from './utils-e17fcddf.js';
 import getDay from './getDay.js';
 export { default as getDay } from './getDay.js';
 import getMonth from './getMonth.js';
@@ -43,4 +43,19 @@ function getDate(date = new Date(), options = {}) {
   return formattedDate;
 }
 
-export { getDate };
+const formatDay = function(day = 0, format = 'eeee') {
+  switch (format) {
+    case 'eee':
+      return banglaWeekDays[day];
+    default:
+      return `${banglaWeekDays[day]}বার`;
+  }
+};
+
+function getWeekDay(date = new Date(), options = {}) {
+  const day = date.getDay();
+  const format = options.format || 'eeee';
+  return formatDay(day, format);
+}
+
+export { getDate, getWeekDay };

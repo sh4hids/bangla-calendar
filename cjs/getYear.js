@@ -1,17 +1,17 @@
 'use strict';
 
-var __chunk_1 = require('./chunk-6bd89ad0.js');
+var utils = require('./utils-b414064a.js');
 
 const formatYear = function(year = 0, format = 'YYYY') {
   let y = year.toString();
 
   switch (format) {
     case 'YY':
-      return __chunk_1.convertNumbers(y.substring(y.length - 2));
+      return utils.convertNumbers(y.substring(y.length - 2));
     case 'YYYYb':
-      return `${__chunk_1.convertNumbers(y)} (বঙ্গাব্দ)`;
+      return `${utils.convertNumbers(y)} (বঙ্গাব্দ)`;
     default:
-      return __chunk_1.convertNumbers(y);
+      return utils.convertNumbers(y);
   }
 };
 

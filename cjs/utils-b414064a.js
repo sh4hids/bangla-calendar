@@ -49,10 +49,21 @@ const banglaMonths = [
   'চৈত্র',
 ];
 
+const banglaWeekDays = [
+  'রবি',
+  'সোম',
+  'মঙ্গল',
+  'বুধ',
+  'বৃহস্পতি',
+  'শুক্র',
+  'শনি',
+];
+
 const isLeapYear = function(year = 0) {
   return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0;
 };
 
 exports.banglaMonths = banglaMonths;
+exports.banglaWeekDays = banglaWeekDays;
 exports.convertNumbers = convertNumbers;
 exports.isLeapYear = isLeapYear;

@@ -1,6 +1,6 @@
 'use strict';
 
-var __chunk_1 = require('./chunk-6bd89ad0.js');
+var utils = require('./utils-b414064a.js');
 
 const formatDay = function(day = 1, format = 'D') {
   let d = day.toString();
@@ -8,9 +8,9 @@ const formatDay = function(day = 1, format = 'D') {
   switch (format) {
     case 'DD':
       d = d.length === 1 ? `0${d}` : d;
-      return __chunk_1.convertNumbers(d);
+      return utils.convertNumbers(d);
     default:
-      return __chunk_1.convertNumbers(day);
+      return utils.convertNumbers(day);
   }
 };
 
@@ -30,7 +30,7 @@ function getDay(date = new Date(), options = {}) {
 
   if (month === 2) {
     return day < 15
-      ? __chunk_1.isLeapYear(year)
+      ? utils.isLeapYear(year)
         ? formatDay(day + 17, format)
         : formatDay(day + 16, format)
       : formatDay(day - 14, format);
