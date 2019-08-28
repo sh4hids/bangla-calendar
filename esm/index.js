@@ -1,4 +1,4 @@
-import { a as banglaWeekDays } from './utils-e17fcddf.js';
+import { i as isValidDate, e as errorMessage, d as banglaWeekDays } from './utils-cd7bcc7e.js';
 import getDay from './getDay.js';
 export { default as getDay } from './getDay.js';
 import getMonth from './getMonth.js';
@@ -6,10 +6,40 @@ export { default as getMonth } from './getMonth.js';
 import getYear from './getYear.js';
 export { default as getYear } from './getYear.js';
 
-function getDate(date = new Date(), options = {}) {
-  const format = options.format || 'D MMMM, YYYY';
+const formatDay = function(day = 0, format = 'eeee') {
+  switch (format) {
+    case 'eee':
+      return banglaWeekDays[day];
+    default:
+      return `${banglaWeekDays[day]}বার`;
+  }
+};
 
-  let formattedDate = format.replace(/DD|D/gi, fmt => {
+function getWeekDay(date = new Date(), options = {}) {
+  if (!isValidDate(date)) return errorMessage;
+
+  date = new Date(date);
+  const day = date.getDay();
+  const format = options.format || 'eeee';
+  return formatDay(day, format);
+}
+
+function getDate(date = new Date(), options = {}) {
+  if (!isValidDate(date)) return errorMessage;
+
+  date = new Date(date);
+  const format = options.format || 'eeee, D MMMM, YYYY';
+
+  let formattedDate = format.replace(/eeee|eee/gi, fmt => {
+    switch (fmt) {
+      case 'eee':
+        return getWeekDay(date, { format: 'eee' });
+      default:
+        return getWeekDay(date);
+    }
+  });
+
+  formattedDate = formattedDate.replace(/DD|D/gi, fmt => {
     switch (fmt) {
       case 'DD':
         return getDay(date, { format: 'DD' });
@@ -41,21 +71,6 @@ function getDate(date = new Date(), options = {}) {
   });
 
   return formattedDate;
-}
-
-const formatDay = function(day = 0, format = 'eeee') {
-  switch (format) {
-    case 'eee':
-      return banglaWeekDays[day];
-    default:
-      return `${banglaWeekDays[day]}বার`;
-  }
-};
-
-function getWeekDay(date = new Date(), options = {}) {
-  const day = date.getDay();
-  const format = options.format || 'eeee';
-  return formatDay(day, format);
 }
 
 export { getDate, getWeekDay };

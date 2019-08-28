@@ -74,6 +74,27 @@ getDay(date1, { format: 'D' }); //output: ১
 | date      | JavaScript date | `new Date('August 16 2019 06:22:03')` |
 | options   | object          | `{ format: 'D' }`                     |
 
+### `getWeekDay(date, {})`
+
+This method returns the day of the Bangla week of the given date.
+
+#### Examples
+
+```javascript
+const date1 = new Date('August 16 2019 06:22:03');
+
+getWeekDay(date1); //output: শুক্রবার
+getWeekDay(date1, { format: 'eeee' }); //output: শুক্রবার
+getWeekDay(date1, { format: 'eee' }); //output: শুক্র
+```
+
+#### Parameters
+
+| Parameter | Type            | Example                               |
+| --------- | --------------- | ------------------------------------- |
+| date      | JavaScript date | `new Date('August 16 2019 06:22:03')` |
+| options   | object          | `{ format: 'eeee'}`                   |
+
 ### `getMonth(date, {})`
 
 This method returns the Bangla month of a given date.

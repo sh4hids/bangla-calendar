@@ -1,4 +1,4 @@
-import { c as convertNumbers, b as banglaMonths } from './utils-e17fcddf.js';
+import { i as isValidDate, e as errorMessage, c as convertNumbers, b as banglaMonths } from './utils-cd7bcc7e.js';
 
 const formatMonth = function(month = 0, format = 'MMMM') {
   let m = (month + 1).toString();
@@ -14,6 +14,9 @@ const formatMonth = function(month = 0, format = 'MMMM') {
 };
 
 function getMonth(date = new Date(), options = {}) {
+  if (!isValidDate(date)) return errorMessage;
+
+  date = new Date(date);
   const day = date.getUTCDate();
   const month = date.getMonth();
   const year = date.getFullYear();

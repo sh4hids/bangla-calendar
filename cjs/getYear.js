@@ -1,6 +1,6 @@
 'use strict';
 
-var utils = require('./utils-b414064a.js');
+var utils = require('./utils-3878e12f.js');
 
 const formatYear = function(year = 0, format = 'YYYY') {
   let y = year.toString();
@@ -16,6 +16,9 @@ const formatYear = function(year = 0, format = 'YYYY') {
 };
 
 function getYear(date = new Date(), options = {}) {
+  if (!utils.isValidDate(date)) return utils.errorMessage;
+
+  date = new Date(date);
   const day = date.getUTCDate();
   const month = date.getMonth();
   const year = date.getFullYear();

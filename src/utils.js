@@ -60,3 +60,9 @@ export const banglaWeekDays = [
 export const isLeapYear = function(year = 0) {
   return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0;
 };
+
+export const isValidDate = function(date) {
+  return Object.prototype.toString.call(date) === '[object Date]';
+};
+
+export const errorMessage = 'Invalid Date';

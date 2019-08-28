@@ -1,6 +1,6 @@
 {
   "name": "bangla-calendar",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A small library to convert any valid javascript date to Bangla date.",
   "main": "cjs/index.js",
   "module": "esm/index.js",

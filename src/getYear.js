@@ -1,4 +1,4 @@
-import { convertNumbers } from './utils';
+import { convertNumbers, isValidDate, errorMessage } from './utils';
 
 const formatYear = function(year = 0, format = 'YYYY') {
   let y = year.toString();
@@ -14,6 +14,9 @@ const formatYear = function(year = 0, format = 'YYYY') {
 };
 
 export default function(date = new Date(), options = {}) {
+  if (!isValidDate(date)) return errorMessage;
+
+  date = new Date(date);
   const day = date.getUTCDate();
   const month = date.getMonth();
   const year = date.getFullYear();

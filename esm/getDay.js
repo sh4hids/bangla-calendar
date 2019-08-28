@@ -1,4 +1,4 @@
-import { i as isLeapYear, c as convertNumbers } from './utils-e17fcddf.js';
+import { i as isValidDate, e as errorMessage, a as isLeapYear, c as convertNumbers } from './utils-cd7bcc7e.js';
 
 const formatDay = function(day = 1, format = 'D') {
   let d = day.toString();
@@ -13,6 +13,9 @@ const formatDay = function(day = 1, format = 'D') {
 };
 
 function getDay(date = new Date(), options = {}) {
+  if (!isValidDate(date)) return errorMessage;
+
+  date = new Date(date);
   const day = date.getUTCDate();
   const month = date.getMonth();
   const year = date.getFullYear();

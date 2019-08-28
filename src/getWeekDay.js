@@ -1,4 +1,4 @@
-import { banglaWeekDays } from './utils';
+import { banglaWeekDays, isValidDate, errorMessage } from './utils';
 
 const formatDay = function(day = 0, format = 'eeee') {
   switch (format) {
@@ -10,6 +10,9 @@ const formatDay = function(day = 0, format = 'eeee') {
 };
 
 export default function(date = new Date(), options = {}) {
+  if (!isValidDate(date)) return errorMessage;
+
+  date = new Date(date);
   const day = date.getDay();
   const format = options.format || 'eeee';
   return formatDay(day, format);

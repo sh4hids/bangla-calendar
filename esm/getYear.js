@@ -1,4 +1,4 @@
-import { c as convertNumbers } from './utils-e17fcddf.js';
+import { i as isValidDate, e as errorMessage, c as convertNumbers } from './utils-cd7bcc7e.js';
 
 const formatYear = function(year = 0, format = 'YYYY') {
   let y = year.toString();
@@ -14,6 +14,9 @@ const formatYear = function(year = 0, format = 'YYYY') {
 };
 
 function getYear(date = new Date(), options = {}) {
+  if (!isValidDate(date)) return errorMessage;
+
+  date = new Date(date);
   const day = date.getUTCDate();
   const month = date.getMonth();
   const year = date.getFullYear();

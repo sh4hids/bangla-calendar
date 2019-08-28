@@ -61,4 +61,10 @@ const isLeapYear = function(year = 0) {
   return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0;
 };
 
-export { banglaWeekDays as a, banglaMonths as b, convertNumbers as c, isLeapYear as i };
+const isValidDate = function(date) {
+  return Object.prototype.toString.call(date) === '[object Date]';
+};
+
+const errorMessage = 'Invalid Date';
+
+export { isLeapYear as a, banglaMonths as b, convertNumbers as c, banglaWeekDays as d, errorMessage as e, isValidDate as i };
