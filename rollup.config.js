@@ -16,9 +16,12 @@ export default [
     input: {
       index: 'src/main.js',
       getDay: 'src/getDay.js',
+      getDate: 'src/getDate.js',
+      getWeekDay: 'src/getWeekDay.js',
       getMonth: 'src/getMonth.js',
       getYear: 'src/getYear.js',
     },
+    plugins: [terser()],
     output: [
       {
         dir: 'esm',

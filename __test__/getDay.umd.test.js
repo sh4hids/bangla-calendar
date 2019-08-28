@@ -2,6 +2,7 @@ const { getDay } = require('../umd/bangla-calendar');
 
 const date1 = new Date('August 16 2019 06:22:03');
 const date2 = new Date('March 14 2020 06:22:03');
+const date3 = 'notadate';
 
 test(`converts ${date1} to '১'`, () => {
   expect(getDay(date1)).toBe('১');
@@ -17,4 +18,8 @@ test(`converts ${date2} to '৩১'`, () => {
 
 test(`converts ${date2} to '৩১'`, () => {
   expect(getDay(date2, { format: 'DD' })).toBe('৩১');
+});
+
+test(`converts ${date3} to 'Invalid Date'`, () => {
+  expect(getDay(date3, { format: 'DD' })).toBe('Invalid Date');
 });

@@ -1,12 +1,25 @@
-import { convertNumbers } from './utils';
+import { convertNumbers, isValidDate, errorMessage } from './utils';
 import getDay from './getDay';
 import getMonth from './getMonth';
 import getYear from './getYear';
+import getWeekDay from './getWeekDay';
 
 export default function(date = new Date(), options = {}) {
-  const format = options.format || 'D MMMM, YYYY';
+  if (!isValidDate(date)) return errorMessage;
 
-  let formattedDate = format.replace(/DD|D/gi, fmt => {
+  date = new Date(date);
+  const format = options.format || 'eeee, D MMMM, YYYY';
+
+  let formattedDate = format.replace(/eeee|eee/gi, fmt => {
+    switch (fmt) {
+      case 'eee':
+        return getWeekDay(date, { format: 'eee' });
+      default:
+        return getWeekDay(date);
+    }
+  });
+
+  formattedDate = formattedDate.replace(/DD|D/gi, fmt => {
     switch (fmt) {
       case 'DD':
         return getDay(date, { format: 'DD' });

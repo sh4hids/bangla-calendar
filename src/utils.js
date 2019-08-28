@@ -47,6 +47,22 @@ export const banglaMonths = [
   'চৈত্র',
 ];
 
+export const banglaWeekDays = [
+  'রবি',
+  'সোম',
+  'মঙ্গল',
+  'বুধ',
+  'বৃহস্পতি',
+  'শুক্র',
+  'শনি',
+];
+
 export const isLeapYear = function(year = 0) {
   return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0;
 };
+
+export const isValidDate = function(date) {
+  return Object.prototype.toString.call(date) === '[object Date]';
+};
+
+export const errorMessage = 'Invalid Date';
