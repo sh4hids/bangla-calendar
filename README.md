@@ -11,13 +11,25 @@ $ npm i bangla-calendar
 ## Usage
 
 ```javascript
-const { getDate, getDay, getMonth, getYear } = require('bangla-calendar');
+const {
+  getDate,
+  getDay,
+  getWeekDay,
+  getMonth,
+  getYear,
+} = require('bangla-calendar');
 ```
 
 or
 
 ```javascript
-import { getDate, getDay, getMonth, getYear } from 'bangla-calendar';
+import {
+  getDate,
+  getDay,
+  getWeekDay,
+  getMonth,
+  getYear,
+} from 'bangla-calendar';
 ```
 
 ```javascript
