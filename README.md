@@ -23,7 +23,7 @@ import { getDate, getDay, getMonth, getYear } from 'bangla-calendar';
 ```javascript
 const date1 = new Date('August 16 2019 06:22:03');
 
-getDate(date1); //output: ১ ভাদ্র, ১৪২৬
+getDate(date1); //output: শুক্রবার, ১ ভাদ্র, ১৪২৬
 getDate(date1, { format: 'DD/MM/YYYY' }); //output: ০১/০৫/১৪২৬
 ```
 
