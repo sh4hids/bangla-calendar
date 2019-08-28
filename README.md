@@ -38,7 +38,7 @@ This method returns full Bangla date for a given date.
 ```javascript
 const date1 = new Date('August 16 2019 06:22:03');
 
-getDate(date1); //output: ১ ভাদ্র, ১৪২৬
+getDate(date1); //output: শুক্রবার, ১ ভাদ্র, ১৪২৬
 getDate(date1, { format: 'DD/MM/YY' }); //output: ০১/০৫/২৬
 getDate(date1, { format: 'DD/MM/YYYY' }); //output: ০১/০৫/১৪২৬
 getDate(date1, { format: 'DD/MM/YYYYb' }); //output: ০১/০৫/১৪২৬ (বঙ্গাব্দ)
