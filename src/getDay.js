@@ -32,8 +32,8 @@ export default function(date = new Date(), options = {}) {
   if (month === 2) {
     return day < 15
       ? isLeapYear(year)
-        ? formatDay(day + 17, format)
-        : formatDay(day + 16, format)
+        ? formatDay(day + 16, format)
+        : formatDay(day + 15, format)
       : formatDay(day - 14, format);
   }
 
@@ -62,7 +62,7 @@ export default function(date = new Date(), options = {}) {
   }
 
   if (month === 9) {
-    return day < 16 ? formatDay(day + 15, format) : formatDay(day - 15, format);
+    return day < 16 ? formatDay(day + 16, format) : formatDay(day - 15, format);
   }
 
   if (month === 10) {
