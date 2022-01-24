@@ -1,4 +1,4 @@
-const { getWeekDay } = require('../umd/bangla-calendar');
+import getWeekDay from '../getWeekDay';
 
 const date1 = new Date('August 16 2019 06:22:03');
 const date2 = new Date('March 14 2020 06:22:03');

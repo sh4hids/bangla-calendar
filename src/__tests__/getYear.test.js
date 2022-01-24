@@ -1,4 +1,4 @@
-const { getYear } = require('../umd/bangla-calendar');
+import getYear from '../getYear';
 
 const date1 = new Date('August 16 2019 06:22:03');
 const date2 = new Date('April 13 2019 06:22:03');

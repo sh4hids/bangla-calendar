@@ -8,7 +8,6 @@
     "prebuild": "npm run test",
     "build": "rm -rf cjs esm umd && rollup --config",
     "prepare": "rm -rf cjs esm umd && rollup --config",
-    "pretest": "rollup --config",
     "test": "jest"
   },
   "jest": {
