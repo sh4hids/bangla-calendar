@@ -1,10 +1,10 @@
-const { getDay } = require('../umd/bangla-calendar');
-
+import getDay from '../getDay';
 const date1 = new Date('August 16 2019 06:22:03');
 const date2 = new Date('March 14 2020 06:22:03');
 const date3 = 'notadate';
 const date4 = new Date('March 14 2020 06:22:03');
 const date5 = new Date('March 14 2021 06:22:03');
+const date6 = new Date('January 19 2022 06:22:03');
 
 test(`converts ${date1} to '১'`, () => {
   expect(getDay(date1)).toBe('১');
@@ -32,4 +32,8 @@ test(`converts ${date4} to '৩০'`, () => {
 
 test(`converts ${date5} to '২৯'`, () => {
   expect(getDay(date5, { format: 'DD' })).toBe('২৯');
+});
+
+test(`converts ${date6} to '০৫'`, () => {
+  expect(getDay(date6, { format: 'DD' })).toBe('০৫');
 });
