@@ -1,6 +1,6 @@
 import { convertNumbers, isLeapYear, isValidDate, errorMessage } from './utils';
 
-const formatDay = function(day = 1, format = 'D') {
+const formatDay = function (day = 1, format = 'D') {
   let d = day.toString();
 
   switch (format) {
@@ -12,7 +12,7 @@ const formatDay = function(day = 1, format = 'D') {
   }
 };
 
-export default function(date = new Date(), options = {}) {
+export default function (date = new Date(), options = {}) {
   if (!isValidDate(date)) return errorMessage;
 
   date = new Date(date);
@@ -22,11 +22,11 @@ export default function(date = new Date(), options = {}) {
   const format = options.format || 'D';
 
   if (month === 0) {
-    return day < 14 ? formatDay(day + 17, format) : formatDay(day - 13, format);
+    return day < 14 ? formatDay(day + 16, format) : formatDay(day - 14, format);
   }
 
   if (month === 1) {
-    return day < 13 ? formatDay(day + 18, format) : formatDay(day - 12, format);
+    return day < 13 ? formatDay(day + 17, format) : formatDay(day - 13, format);
   }
 
   if (month === 2) {
@@ -62,14 +62,14 @@ export default function(date = new Date(), options = {}) {
   }
 
   if (month === 9) {
-    return day < 16 ? formatDay(day + 16, format) : formatDay(day - 15, format);
+    return day < 16 ? formatDay(day + 15, format) : formatDay(day - 16, format);
   }
 
   if (month === 10) {
-    return day < 15 ? formatDay(day + 16, format) : formatDay(day - 14, format);
+    return day < 15 ? formatDay(day + 15, format) : formatDay(day - 15, format);
   }
 
   if (month === 11) {
-    return day < 15 ? formatDay(day + 16, format) : formatDay(day - 14, format);
+    return day < 15 ? formatDay(day + 15, format) : formatDay(day - 15, format);
   }
 }

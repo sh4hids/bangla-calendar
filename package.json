@@ -11,6 +11,11 @@
     "pretest": "rollup --config",
     "test": "jest"
   },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+  },
   "files": [
     "cjs/*",
     "esm/*",
@@ -33,8 +38,10 @@
   },
   "homepage": "https://github.com/sh4hids/bangla-calendar#readme",
   "devDependencies": {
-    "jest": "^27.0.6",
-    "rollup": "^2.56.2",
+    "@babel/preset-env": "^7.16.11",
+    "babel-jest": "^27.4.6",
+    "jest": "^27.4.7",
+    "rollup": "^2.66.0",
     "rollup-plugin-terser": "^7.0.2"
   }
 }
