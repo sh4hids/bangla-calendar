@@ -5,6 +5,7 @@ const date3 = 'notadate';
 const date4 = new Date('March 14 2020 06:22:03');
 const date5 = new Date('March 14 2021 06:22:03');
 const date6 = new Date('January 19 2022 06:22:03');
+const date7 = new Date('February 13 2022 06:22:03');
 
 test(`converts ${date1} to '১'`, () => {
   expect(getDay(date1)).toBe('১');
@@ -36,4 +37,8 @@ test(`converts ${date5} to '২৯'`, () => {
 
 test(`converts ${date6} to '০৫'`, () => {
   expect(getDay(date6, { format: 'DD' })).toBe('০৫');
+});
+
+test(`converts ${date7} to '৩০'`, () => {
+  expect(getDay(date7, { format: 'DD' })).toBe('৩০');
 });

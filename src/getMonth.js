@@ -5,7 +5,7 @@ import {
   errorMessage,
 } from './utils';
 
-const formatMonth = function(month = 0, format = 'MMMM') {
+const formatMonth = function (month = 0, format = 'MMMM') {
   let m = (month + 1).toString();
   switch (format) {
     case 'M':
@@ -18,7 +18,7 @@ const formatMonth = function(month = 0, format = 'MMMM') {
   }
 };
 
-export default function(date = new Date(), options = {}) {
+export default function (date = new Date(), options = {}) {
   if (!isValidDate(date)) return errorMessage;
 
   date = new Date(date);
@@ -63,11 +63,11 @@ export default function(date = new Date(), options = {}) {
     return formatMonth(8, format);
   }
 
-  if ((month === 0 && day > 13) || (month === 1 && day < 13)) {
+  if ((month === 0 && day > 13) || (month === 1 && day < 14)) {
     return formatMonth(9, format);
   }
 
-  if ((month === 1 && day > 12) || (month === 2 && day < 15)) {
+  if ((month === 1 && day > 13) || (month === 2 && day < 15)) {
     return formatMonth(10, format);
   }
 
