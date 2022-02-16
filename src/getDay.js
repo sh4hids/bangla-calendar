@@ -26,7 +26,7 @@ export default function (date = new Date(), options = {}) {
   }
 
   if (month === 1) {
-    return day < 13 ? formatDay(day + 17, format) : formatDay(day - 13, format);
+    return day < 14 ? formatDay(day + 17, format) : formatDay(day - 13, format);
   }
 
   if (month === 2) {

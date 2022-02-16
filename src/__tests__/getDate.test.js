@@ -4,6 +4,7 @@ const date1 = new Date('2021-01-01T04:26:41.166Z');
 const date2 = new Date('2021-01-31T04:26:41.166Z');
 
 const date3 = new Date('2021-02-01T04:26:41.166Z');
+const date31 = new Date('2022-02-13T04:26:41.166Z');
 const date4 = new Date('2021-02-28T04:26:41.166Z');
 
 const date5 = new Date('2021-03-01T04:26:41.166Z');
@@ -54,6 +55,12 @@ test('should generate correct Bangla date for date2', () => {
 test('should generate correct Bangla date for date3', () => {
   const result = getDate(date3);
   const expectedResult = 'সোমবার, ১৮ মাঘ, ১৪২৭';
+  expect(result).toEqual(expectedResult);
+});
+
+test('should generate correct Bangla date for date31', () => {
+  const result = getDate(date31);
+  const expectedResult = 'রবিবার, ৩০ মাঘ, ১৪২৮';
   expect(result).toEqual(expectedResult);
 });
 
