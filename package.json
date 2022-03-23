@@ -17,7 +17,7 @@
     "lint-staged": "lint-staged",
     "prepare": "husky install",
     "commit": "cz",
-    "semantic-release": "semantic-release --brances main"
+    "semantic-release": "semantic-release"
   },
   "files": [
     "lib/*"
