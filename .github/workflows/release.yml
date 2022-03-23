@@ -20,7 +20,7 @@ jobs:
       - name: Validating build
         run: npm run validate
       - name: Publish to NPM
-        run: npx semantic-release
+        run: npm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
