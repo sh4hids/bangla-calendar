@@ -1,4 +1,4 @@
-import { isLeapYear, isValidDate } from '../utils';
+import { formatDay, isLeapYear, isValidDate } from '../utils';
 
 describe('utils', () => {
   describe('isLeapYear', () => {
@@ -19,6 +19,15 @@ describe('utils', () => {
     });
     it('should return false for 2022-13-33', () => {
       expect(isValidDate(new Date('2022-13-33'))).toBe(false);
+    });
+  });
+
+  describe('formatDay', () => {
+    it('should return ১ for 1', () => {
+      expect(formatDay(1, 'D')).toBe('১');
+    });
+    it('should return ১১ for 11', () => {
+      expect(formatDay(11, 'D')).toBe('১১');
     });
   });
 });
