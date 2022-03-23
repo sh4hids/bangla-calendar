@@ -25,6 +25,7 @@ jobs:
           git config user.name 'sh4hids'
           git config user.email 'sh4hids@users.noreply.github.com'
       - name: Publish package on NPM
-        run: npm run release
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm run release
