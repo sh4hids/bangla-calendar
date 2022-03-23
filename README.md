@@ -26,8 +26,8 @@ or
 import {
   getDate,
   getDay,
-  getWeekDay,
   getMonth,
+  getWeekDay,
   getYear,
 } from 'bangla-calendar';
 ```
