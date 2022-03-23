@@ -20,12 +20,8 @@ jobs:
         run: npm ci
       - name: Validating build
         run: npm run validate
-      - name: Configure Git
-        run: |
-          git config user.name 'sh4hids'
-          git config user.email 'sh4hids@users.noreply.github.com'
-      - name: Publish package on NPM
+      - name: Publish to NPM
+        run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm run release
