@@ -1,4 +1,4 @@
-import getDate from '../getDate';
+import { getDate } from '..';
 
 const date1 = new Date('2021-01-01T04:26:41.166Z');
 const date2 = new Date('2021-01-31T04:26:41.166Z');

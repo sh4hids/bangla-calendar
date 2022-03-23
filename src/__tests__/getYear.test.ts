@@ -1,9 +1,9 @@
-import getYear from '../getYear';
+import { getYear } from '../getYear';
 
 const date1 = new Date('August 16 2019 06:22:03');
 const date2 = new Date('April 13 2019 06:22:03');
 const date3 = new Date('April 14 2020 06:22:03');
-const date4 = 'xyzdate';
+const date4 = new Date('xyzdate');
 
 test(`converts ${date1} to '১৪২৬'`, () => {
   expect(getYear(date1)).toBe('১৪২৬');
@@ -30,5 +30,5 @@ test(`converts ${date3} to '২৭'`, () => {
 });
 
 test(`converts ${date4} to 'Invalid Date'`, () => {
-  expect(getYear(date4, { format: 'DD' })).toBe('Invalid Date');
+  expect(getYear(date4, { format: 'YY' })).toBe('Invalid Date');
 });

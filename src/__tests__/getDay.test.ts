@@ -1,7 +1,8 @@
-import getDay from '../getDay';
+import { getDay } from '../getDay';
+
 const date1 = new Date('August 16 2019 06:22:03');
 const date2 = new Date('March 14 2020 06:22:03');
-const date3 = 'notadate';
+const date3 = new Date('March 54 2020 06:22:03');
 const date4 = new Date('March 14 2020 06:22:03');
 const date5 = new Date('March 14 2021 06:22:03');
 const date6 = new Date('January 19 2022 06:22:03');

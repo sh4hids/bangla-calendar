@@ -1,1 +1,0 @@
-"use strict";var e=require("./utils-fe3ccadb.js");module.exports=function(a=new Date,t={}){return e.isValidDate(a)?function(a=0,t="eeee"){switch(t){case"eee":return e.banglaWeekDays[a];default:return`${e.banglaWeekDays[a]}বার`}}((a=new Date(a)).getDay(),t.format||"eeee"):e.errorMessage};

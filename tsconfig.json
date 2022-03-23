@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "emitDeclarationOnly": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "declarationDir": "lib/dts"
+  },
+  "exclude": ["src/**/*.test.ts", "lib", "node_modules"]
+}
