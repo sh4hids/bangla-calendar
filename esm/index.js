@@ -1,1 +1,0 @@
-export{default as getDate}from"./getDate.js";export{default as getDay}from"./getDay.js";export{default as getWeekDay}from"./getWeekDay.js";export{default as getMonth}from"./getMonth.js";export{default as getYear}from"./getYear.js";import"./utils-d28c699f.js";

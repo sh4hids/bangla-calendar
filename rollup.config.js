@@ -1,12 +1,21 @@
 import { terser } from 'rollup-plugin-terser';
-const pkgName = 'bangla-calendar';
+import ts from 'rollup-plugin-ts';
 
 export default [
   {
-    input: 'src/main.js',
-    plugins: [terser()],
+    input: 'src/index.ts',
+    plugins: [
+      ts({
+        hook: {
+          // Always rename declaration files to index.d.ts to avoid emitting two declaration files with identical contents
+          outputPath: (path, kind) =>
+            kind === 'declaration' ? './lib/index.d.ts' : path,
+        },
+      }),
+      terser(),
+    ],
     output: {
-      file: `umd/${pkgName}.js`,
+      file: `lib/index.js`,
       format: 'umd',
       name: 'banglaCalendar',
       esModule: false,
@@ -14,23 +23,26 @@ export default [
   },
   {
     input: {
-      index: 'src/main.js',
-      getDay: 'src/getDay.js',
-      getDate: 'src/getDate.js',
-      getWeekDay: 'src/getWeekDay.js',
-      getMonth: 'src/getMonth.js',
-      getYear: 'src/getYear.js',
+      index: 'src/index.ts',
     },
-    plugins: [terser()],
     output: [
       {
-        dir: 'esm',
+        dir: 'lib/esm',
         format: 'esm',
+        preserveModules: true,
       },
       {
-        dir: 'cjs',
+        dir: 'lib/cjs',
         format: 'cjs',
+        preserveModules: true,
       },
+    ],
+    plugins: [
+      ts({
+        tsconfig: {
+          declaration: false,
+        },
+      }),
     ],
   },
 ];
