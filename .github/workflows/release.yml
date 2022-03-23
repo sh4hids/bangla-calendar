@@ -1,14 +1,13 @@
 name: Release
 
 on:
-  pull_request_target:
-    types:
-      - closed
-    branches: [main]
+  push:
+    branches:
+      - main
 
 jobs:
-  if_merged:
-    if: ${{ github.event.pull_request.merged }}
+  release:
+    name: release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -21,7 +20,7 @@ jobs:
       - name: Validating build
         run: npm run validate
       - name: Publish to NPM
-        run: npm run semantic-release
+        run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
