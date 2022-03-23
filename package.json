@@ -19,7 +19,7 @@
     "commit": "cz",
     "version": "standard-version",
     "prerelease": "npm run version",
-    "release": "git push --follow-tags origin HEAD && npm publish"
+    "release": "git push --follow-tags origin HEAD && npm publish --ignore-scripts"
   },
   "files": [
     "lib/*"

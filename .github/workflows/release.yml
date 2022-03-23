@@ -1,0 +1,26 @@
+name: Release
+
+on:
+  pull_request_target:
+    types:
+      - closed
+    branches: [main]
+
+jobs:
+  if_merged:
+    if: github.event.pull_request_target.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js v16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - name: Installing dependencies
+        run: npm ci
+      - name: Validating build
+        run: npm run validate
+      - name: Publish package on NPM
+        run: npm run release
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

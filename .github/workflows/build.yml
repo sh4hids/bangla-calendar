@@ -19,5 +19,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: npm ci
-      - run: validate --if-present
+      - name: Installing dependencies
+        run: npm ci
+      - name: Validating build
+        run: npm run validate
