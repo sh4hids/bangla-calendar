@@ -3,7 +3,7 @@ import { errorMessage, formatDay, isLeapYear, isValidDate } from './utils';
 
 export function getDay(
   date: Date = new Date(),
-  options: DayOptions = { format: 'D' }
+  options: DayOptions = { format: 'D', calculationMethod: 'BD' }
 ): string {
   if (!isValidDate(date)) return errorMessage;
 
@@ -13,7 +13,7 @@ export function getDay(
   const day = inputDate.getUTCDate();
   const month = inputDate.getMonth();
   const year = inputDate.getFullYear();
-  const { format } = options;
+  const { format, calculationMethod = 'BD' } = options;
 
   switch (month) {
     case 0:
@@ -48,8 +48,13 @@ export function getDay(
         day < 15 ? formatDay(day + 17, format) : formatDay(day - 14, format);
       break;
     case 6:
-      result =
-        day < 16 ? formatDay(day + 16, format) : formatDay(day - 15, format);
+      if (calculationMethod === 'BD') {
+        result =
+          day < 16 ? formatDay(day + 16, format) : formatDay(day - 15, format);
+      } else {
+        result =
+          day < 18 ? formatDay(day + 15, format) : formatDay(day - 15, format);
+      }
       break;
     case 7:
       result =
