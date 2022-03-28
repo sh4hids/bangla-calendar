@@ -14,10 +14,10 @@ function getMonthBD(day: number, month: number): number {
     case (month === 6 && day > 15) || (month === 7 && day < 16):
       result = 3;
       break;
-    case (month === 7 && day > 15) || (month === 8 && day < 17):
+    case (month === 7 && day > 15) || (month === 8 && day < 16):
       result = 4;
       break;
-    case (month === 8 && day > 15) || (month === 9 && day < 16):
+    case (month === 8 && day > 15) || (month === 9 && day < 17):
       result = 5;
       break;
     case (month === 9 && day > 16) || (month === 10 && day < 16):

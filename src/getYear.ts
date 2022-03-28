@@ -1,5 +1,5 @@
 import { YearOptions } from './types';
-import { errorMessage, formatYear, isValidDate } from './utils';
+import { errorMessage, formatYear, isLeapYear, isValidDate } from './utils';
 
 export function getYear(
   date: Date = new Date(),
@@ -17,9 +17,19 @@ export function getYear(
   let result = formatYear(year - 593, format);
 
   if (
-    month < 3 ||
-    (calculationMethod === 'BD' && month === 3 && day < 14) ||
-    (calculationMethod === 'IN' && month === 3 && day < 15)
+    isLeapYear(year) &&
+    (month < 3 ||
+      (calculationMethod === 'BD' && month === 3 && day < 14) ||
+      (calculationMethod === 'IN' && month === 3 && day < 14))
+  ) {
+    result = formatYear(year - 594, format);
+  }
+
+  if (
+    !isLeapYear(year) &&
+    (month < 3 ||
+      (calculationMethod === 'BD' && month === 3 && day < 14) ||
+      (calculationMethod === 'IN' && month === 3 && day < 15))
   ) {
     result = formatYear(year - 594, format);
   }
