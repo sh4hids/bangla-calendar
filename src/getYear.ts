@@ -1,9 +1,9 @@
 import { YearOptions } from './types';
-import { errorMessage, formatYear, isValidDate } from './utils';
+import { errorMessage, formatYear, isLeapYear, isValidDate } from './utils';
 
 export function getYear(
   date: Date = new Date(),
-  options: YearOptions = { format: 'YYYY' }
+  options: YearOptions = { format: 'YYYY', calculationMethod: 'BD' }
 ): string {
   if (!isValidDate(date)) return errorMessage;
 
@@ -12,11 +12,25 @@ export function getYear(
   const day = inputDate.getUTCDate();
   const month = inputDate.getMonth();
   const year = inputDate.getFullYear();
-  const { format } = options;
+  const { format, calculationMethod = 'BD' } = options;
 
   let result = formatYear(year - 593, format);
 
-  if (month < 3 || (month === 3 && day < 14)) {
+  if (
+    isLeapYear(year) &&
+    (month < 3 ||
+      (calculationMethod === 'BD' && month === 3 && day < 14) ||
+      (calculationMethod === 'IN' && month === 3 && day < 14))
+  ) {
+    result = formatYear(year - 594, format);
+  }
+
+  if (
+    !isLeapYear(year) &&
+    (month < 3 ||
+      (calculationMethod === 'BD' && month === 3 && day < 14) ||
+      (calculationMethod === 'IN' && month === 3 && day < 15))
+  ) {
     result = formatYear(year - 594, format);
   }
 

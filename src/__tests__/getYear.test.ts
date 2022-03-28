@@ -1,34 +1,60 @@
 import { getYear } from '../getYear';
 
-const date1 = new Date('August 16 2019 06:22:03');
-const date2 = new Date('April 13 2019 06:22:03');
-const date3 = new Date('April 14 2020 06:22:03');
-const date4 = new Date('xyzdate');
+describe('getYear', () => {
+  const april142021 = new Date('April 14 2021 06:22:03');
+  describe(`Date: ${april142021}`, () => {
+    it(`(BD) should convert to '১৪২৮'`, () => {
+      expect(getYear(april142021)).toBe('১৪২৮');
+    });
 
-test(`converts ${date1} to '১৪২৬'`, () => {
-  expect(getYear(date1)).toBe('১৪২৬');
-});
+    it(`(IN) should convert to '১৪২৭'`, () => {
+      expect(getYear(april142021, { calculationMethod: 'IN' })).toBe('১৪২৭');
+    });
+  });
 
-test(`converts ${date1} to '২৬'`, () => {
-  expect(getYear(date1, { format: 'YY' })).toBe('২৬');
-});
+  const april142022 = new Date('April 14 2022 06:22:03');
+  describe(`Date: ${april142022}`, () => {
+    it(`(BD) should convert to '১৪২৯'`, () => {
+      expect(getYear(april142022)).toBe('১৪২৯');
+    });
 
-test(`converts ${date2} to '১৪২৫'`, () => {
-  expect(getYear(date2)).toBe('১৪২৫');
-});
+    it(`(IN) should convert to '১৪২৮'`, () => {
+      expect(getYear(april142022, { calculationMethod: 'IN' })).toBe('১৪২৮');
+    });
+  });
 
-test(`converts ${date2} to '২৫'`, () => {
-  expect(getYear(date2, { format: 'YY' })).toBe('২৫');
-});
+  const april152022 = new Date('April 15 2022 06:22:03');
+  describe(`Date: ${april152022}`, () => {
+    it(`(BD) should convert to '১৪২৯'`, () => {
+      expect(getYear(april152022)).toBe('১৪২৯');
+    });
 
-test(`converts ${date3} to '১৪২৭'`, () => {
-  expect(getYear(date3)).toBe('১৪২৭');
-});
+    it(`(IN) should convert to '১৪২৯'`, () => {
+      expect(getYear(april152022, { calculationMethod: 'IN' })).toBe('১৪২৯');
+    });
+  });
 
-test(`converts ${date3} to '২৭'`, () => {
-  expect(getYear(date3, { format: 'YY' })).toBe('২৭');
-});
+  const april142024 = new Date('April 14 2024 06:22:03');
+  describe(`Date: ${april142024}`, () => {
+    it(`(BD) should convert to '১৪৩১'`, () => {
+      expect(getYear(april142024)).toBe('১৪৩১');
+    });
 
-test(`converts ${date4} to 'Invalid Date'`, () => {
-  expect(getYear(date4, { format: 'YY' })).toBe('Invalid Date');
+    it(`(IN) should convert to '১৪৩১'`, () => {
+      expect(getYear(april142024, { calculationMethod: 'IN' })).toBe('১৪৩১');
+    });
+  });
+
+  const invalidDate = new Date('xyzdate');
+  describe(`Date: ${invalidDate}`, () => {
+    it(`(BD) should convert to 'Invalid Date'`, () => {
+      expect(getYear(invalidDate, { format: 'YY' })).toBe('Invalid Date');
+    });
+
+    it(`(IN) should convert to 'Invalid Date'`, () => {
+      expect(
+        getYear(invalidDate, { format: 'YY', calculationMethod: 'IN' })
+      ).toBe('Invalid Date');
+    });
+  });
 });
