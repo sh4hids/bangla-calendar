@@ -36,4 +36,27 @@ describe('getDate', () => {
       );
     });
   });
+
+  const december162022 = new Date('2023-12-16');
+  describe(`Date: ${december162022}`, () => {
+    it(`(BD) should return 'শনিবার, ১ পৌষ, ১৪৩০'`, () => {
+      expect(getDate(december162022)).toEqual('শনিবার, ১ পৌষ, ১৪৩০');
+    });
+    it(`(IN) should return 'শনিবার, ২৯ অগ্রহায়ণ, ১৪৩০'`, () => {
+      expect(getDate(december162022, { calculationMethod: 'IN' })).toEqual(
+        'শনিবার, ২৯ অগ্রহায়ণ, ১৪৩০'
+      );
+    });
+  });
+  const june192023 = new Date('2023-06-19');
+  describe(`Date: ${june192023}`, () => {
+    it(`(BD) should return 'সোমবার, ৫ আষাঢ়, ১৪৩০'`, () => {
+      expect(getDate(june192023)).toEqual('সোমবার, ৫ আষাঢ়, ১৪৩০');
+    });
+    it(`(IN) should return 'সোমবার, ৩ আষাঢ়, ১৪৩০'`, () => {
+      expect(getDate(june192023, { calculationMethod: 'IN' })).toEqual(
+        'সোমবার, ৩ আষাঢ়, ১৪৩০'
+      );
+    });
+  });
 });

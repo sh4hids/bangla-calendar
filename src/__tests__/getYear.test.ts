@@ -48,13 +48,49 @@ describe('getYear', () => {
   const invalidDate = new Date('xyzdate');
   describe(`Date: ${invalidDate}`, () => {
     it(`(BD) should convert to 'Invalid Date'`, () => {
-      expect(getYear(invalidDate, { format: 'YY' })).toBe('Invalid Date');
+      let error: Error | undefined;
+      try {
+        getYear(invalidDate, { format: 'YY' });
+      } catch (err) {
+        error = err;
+      }
+      expect(error).toEqual(new Error('Invalid Date'));
     });
 
     it(`(IN) should convert to 'Invalid Date'`, () => {
-      expect(
-        getYear(invalidDate, { format: 'YY', calculationMethod: 'IN' })
-      ).toBe('Invalid Date');
+      let error: Error | undefined;
+      try {
+        getYear(invalidDate, { format: 'YY', calculationMethod: 'IN' });
+      } catch (err) {
+        error = err;
+      }
+      expect(error).toEqual(new Error('Invalid Date'));
+    });
+  });
+
+  const beforeBanglaDate = new Date('593-04-13');
+  describe(`Date: ${beforeBanglaDate}`, () => {
+    it(`(BD) should convert to 'Invalid Date'`, () => {
+      let error: Error | undefined;
+      try {
+        getYear(beforeBanglaDate, { format: 'YY' });
+      } catch (err) {
+        error = err;
+      }
+      expect(error).toEqual(new Error('Invalid Date'));
+    });
+
+    it(`(IN) should convert to 'Invalid Date'`, () => {
+      let error: Error | undefined;
+      try {
+        getYear(beforeBanglaDate, {
+          format: 'YY',
+          calculationMethod: 'IN',
+        });
+      } catch (err) {
+        error = err;
+      }
+      expect(error).toEqual(new Error('Invalid Date'));
     });
   });
 });

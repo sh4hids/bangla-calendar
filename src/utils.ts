@@ -1,6 +1,6 @@
 import { DayFormat, MonthFormat, WeekDayFormat, YearFormat } from './types';
 
-export const convertNumbers = (data): string => {
+export const convertNumbers = (data: any) => {
   const numbers = {
     0: '০',
     1: '১',
@@ -129,5 +129,33 @@ export const formatYear = (
       return convertNumbers(y);
   }
 };
+
+export const getJulianDate = (year: number, month: number, day: number) => {
+  let y = year;
+  let m = month;
+  if (month <= 2) {
+    y -= 1;
+    m += 12;
+  }
+  const A = Math.floor(y / 100);
+  const B = 2 - A + Math.floor(A / 4);
+
+  const JD =
+    Math.floor(365.25 * (y + 4716)) +
+    Math.floor(30.6001 * (m + 1)) +
+    day +
+    B -
+    1524.5;
+
+  return JD;
+};
+
+export const monthLengthIN = [
+  0, 30.93081, 62.35364, 93.9999999999999, 125.47636, 156.48933, 186.92405,
+  216.3179999, 246.3153999, 275.14288, 305.09428, 334.91145, 365.258756,
+];
+
+export const startJulianDate = 1938094.4629;
+export const yearLength = 365.258756;
 
 export const errorMessage = 'Invalid Date';
