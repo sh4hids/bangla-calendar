@@ -12,9 +12,14 @@ export function getDate(
     calculationMethod: 'BD',
   }
 ) {
-  if (!isValidDate(date)) return errorMessage;
+  if (!isValidDate(date)) {
+    throw new Error(errorMessage);
+  }
 
   const inputDate = new Date(date);
+  inputDate.setTime(
+    inputDate.getTime() + (inputDate.getTimezoneOffset() + 360) * 60 * 1000
+  );
   const { format = 'eeee, D MMMM, YYYY', calculationMethod = 'BD' } = options;
 
   let formattedDate = format.replace(/eeee|eee/gi, (fmt) => {

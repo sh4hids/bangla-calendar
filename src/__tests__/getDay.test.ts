@@ -179,7 +179,8 @@ describe('getDay', () => {
       expect(getDay(august17, { calculationMethod: 'IN' })).toBe('৩১');
     });
   });
-  const august18 = new Date('August 18 2022 06:22:03');
+
+  const august18 = new Date('2022-08-18');
   describe(`Date: ${august18}`, () => {
     it(`(BD) should convert to '৩'`, () => {
       expect(getDay(august18)).toBe('৩');
