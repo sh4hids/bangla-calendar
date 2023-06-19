@@ -51,19 +51,19 @@ This method returns full Bangla date for a given date.
 const date1 = new Date('August 16 2019 06:22:03');
 
 getDate(date1); //output: শুক্রবার, ১ ভাদ্র, ১৪২৬
-getDate(date1, { format: 'DD/MM/YY' }); //output: ০১/০৫/২৬
-getDate(date1, { format: 'DD/MM/YYYY' }); //output: ০১/০৫/১৪২৬
-getDate(date1, { format: 'DD/MM/YYYYb' }); //output: ০১/০৫/১৪২৬ (বঙ্গাব্দ)
-getDate(date1, { format: 'D MMMM, YYYY' }); //output: ১ ভাদ্র, ১৪২৬
-getDate(date1, { format: 'D MMMM, YYYYb' }); //output: ১ ভাদ্র, ১৪২৬ (বঙ্গাব্দ)
+getDate(date1, { format: 'DD/MM/YY', calculationMethod: 'BD' }); //output: ০১/০৫/২৬
+getDate(date1, { format: 'DD/MM/YYYY', calculationMethod: 'BD' }); //output: ০১/০৫/১৪২৬
+getDate(date1, { format: 'DD/MM/YYYYb', calculationMethod: 'BD' }); //output: ০১/০৫/১৪২৬ (বঙ্গাব্দ)
+getDate(date1, { format: 'D MMMM, YYYY', calculationMethod: 'BD' }); //output: ১ ভাদ্র, ১৪২৬
+getDate(date1, { format: 'D MMMM, YYYYb', calculationMethod: 'BD' }); //output: ১ ভাদ্র, ১৪২৬ (বঙ্গাব্দ)
 ```
 
 #### Parameters
 
-| Parameter | Type            | Example                               |
-| --------- | --------------- | ------------------------------------- |
-| date      | JavaScript date | `new Date('August 16 2019 06:22:03')` |
-| options   | object          | `{ format: 'D MMMM, YYYY' }`          |
+| Parameter | Type            | Example                                               |
+| --------- | --------------- | ----------------------------------------------------- |
+| date      | JavaScript date | `new Date('August 16 2019 06:22:03')`                 |
+| options   | object          | `{ format: 'D MMMM, YYYY', calculationMethod: 'BD' }` |
 
 ### `getDay(date, {})`
 
@@ -75,16 +75,16 @@ This method returns the day of the Bangla month of the given date.
 const date1 = new Date('August 16 2019 06:22:03');
 
 getDay(date1); //output: ১
-getDay(date1, { format: 'DD' }); //output: ০১
-getDay(date1, { format: 'D' }); //output: ১
+getDay(date1, { format: 'DD', calculationMethod: 'BD' }); //output: ০১
+getDay(date1, { format: 'D', calculationMethod: 'BD' }); //output: ১
 ```
 
 #### Parameters
 
-| Parameter | Type            | Example                               |
-| --------- | --------------- | ------------------------------------- |
-| date      | JavaScript date | `new Date('August 16 2019 06:22:03')` |
-| options   | object          | `{ format: 'D' }`                     |
+| Parameter | Type            | Example                                    |
+| --------- | --------------- | ------------------------------------------ |
+| date      | JavaScript date | `new Date('August 16 2019 06:22:03')`      |
+| options   | object          | `{ format: 'D', calculationMethod: 'BD' }` |
 
 ### `getWeekDay(date, {})`
 
@@ -96,16 +96,16 @@ This method returns the day of the Bangla week of the given date.
 const date1 = new Date('August 16 2019 06:22:03');
 
 getWeekDay(date1); //output: শুক্রবার
-getWeekDay(date1, { format: 'eeee' }); //output: শুক্রবার
-getWeekDay(date1, { format: 'eee' }); //output: শুক্র
+getWeekDay(date1, { format: 'eeee', calculationMethod: 'BD' }); //output: শুক্রবার
+getWeekDay(date1, { format: 'eee', calculationMethod: 'BD' }); //output: শুক্র
 ```
 
 #### Parameters
 
-| Parameter | Type            | Example                               |
-| --------- | --------------- | ------------------------------------- |
-| date      | JavaScript date | `new Date('August 16 2019 06:22:03')` |
-| options   | object          | `{ format: 'eeee'}`                   |
+| Parameter | Type            | Example                                       |
+| --------- | --------------- | --------------------------------------------- |
+| date      | JavaScript date | `new Date('August 16 2019 06:22:03')`         |
+| options   | object          | `{ format: 'eeee', calculationMethod: 'BD' }` |
 
 ### `getMonth(date, {})`
 
@@ -117,17 +117,17 @@ This method returns the Bangla month of a given date.
 const date1 = new Date('August 16 2019 06:22:03');
 
 getMonth(date1); //output: ভাদ্র
-getMonth(date1, { format: 'M' }); //output: ১
-getMonth(date1, { format: 'MM' }); //output: ০১
-getMonth(date1, { format: 'MMMM' }); //output: ভাদ্র
+getMonth(date1, { format: 'M', calculationMethod: 'BD' }); //output: ১
+getMonth(date1, { format: 'MM', calculationMethod: 'BD' }); //output: ০১
+getMonth(date1, { format: 'MMMM', calculationMethod: 'BD' }); //output: ভাদ্র
 ```
 
 #### Parameters
 
-| Parameter | Type            | Example                               |
-| --------- | --------------- | ------------------------------------- |
-| date      | JavaScript date | `new Date('August 16 2019 06:22:03')` |
-| options   | object          | `{ format: 'MMMM' }`                  |
+| Parameter | Type            | Example                                       |
+| --------- | --------------- | --------------------------------------------- |
+| date      | JavaScript date | `new Date('August 16 2019 06:22:03')`         |
+| options   | object          | `{ format: 'MMMM', calculationMethod: 'BD' }` |
 
 ### `getYear(date, {})`
 
@@ -139,19 +139,26 @@ This method returns the Bangla year of a given date.
 const date1 = new Date('August 16 2019 06:22:03');
 
 getYear(date1); //output: ১৪২৬
-getYear(date1, { format: 'YY' }); //output: ২৬
-getYear(date1, { format: 'YYYY' }); //output: ১৪২৬
-getYear(date1, { format: 'YYYYb' }); //output: ১৪২৬ (বঙ্গাব্দ)
+getYear(date1, { format: 'YY', calculationMethod: 'BD' }); //output: ২৬
+getYear(date1, { format: 'YYYY', calculationMethod: 'BD' }); //output: ১৪২৬
+getYear(date1, { format: 'YYYYb', calculationMethod: 'BD' }); //output: ১৪২৬ (বঙ্গাব্দ)
 ```
 
 #### Parameters
 
-| Parameter | Type            | Example                               |
-| --------- | --------------- | ------------------------------------- |
-| date      | JavaScript date | `new Date('August 16 2019 06:22:03')` |
-| options   | object          | `{ format: 'YYYY' }`                  |
+| Parameter | Type            | Example                                       |
+| --------- | --------------- | --------------------------------------------- |
+| date      | JavaScript date | `new Date('August 16 2019 06:22:03')`         |
+| options   | object          | `{ format: 'YYYY', calculationMethod: 'BD' }` |
 
 ## Options
+
+#### calculationMethod (string)
+
+| Country    | Token |
+| ---------- | ----- |
+| Bangladesh | BD    |
+| India      | IN    |
 
 #### format (string)
 
