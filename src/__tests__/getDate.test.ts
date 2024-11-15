@@ -1,7 +1,7 @@
 import { getDate } from '..';
 
 describe('getDate', () => {
-  const march28 = new Date('March 28 2022 06:22:03');
+  const march28 = new Date('March 28 2022 06:22:03 GMT+0600');
   describe(`Date: ${march28}`, () => {
     it(`(BD) should return 'সোমবার, ১৪ চৈত্র, ১৪২৮'`, () => {
       expect(getDate(march28)).toEqual('সোমবার, ১৪ চৈত্র, ১৪২৮');
@@ -13,7 +13,7 @@ describe('getDate', () => {
     });
   });
 
-  const march162023 = new Date('March 16 2023 06:22:03');
+  const march162023 = new Date('March 16 2023 06:22:03 GMT+0600');
   describe(`Date: ${march162023}`, () => {
     it(`(BD) should return 'বৃহস্পতিবার, ২ চৈত্র, ১৪২৯'`, () => {
       expect(getDate(march162023)).toEqual('বৃহস্পতিবার, ২ চৈত্র, ১৪২৯');
@@ -25,7 +25,7 @@ describe('getDate', () => {
     });
   });
 
-  const april142022 = new Date('April 14 2022 06:22:03');
+  const april142022 = new Date('April 14 2022 06:22:03 GMT+0600');
   describe(`Date: ${april142022}`, () => {
     it(`(BD) should return 'বৃহস্পতিবার, ১ বৈশাখ, ১৪২৯'`, () => {
       expect(getDate(april142022)).toEqual('বৃহস্পতিবার, ১ বৈশাখ, ১৪২৯');

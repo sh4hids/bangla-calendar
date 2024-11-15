@@ -52,7 +52,7 @@ describe('getYear', () => {
       try {
         getYear(invalidDate, { format: 'YY' });
       } catch (err) {
-        error = err;
+        error = err as Error;
       }
       expect(error).toEqual(new Error('Invalid Date'));
     });
@@ -62,7 +62,7 @@ describe('getYear', () => {
       try {
         getYear(invalidDate, { format: 'YY', calculationMethod: 'IN' });
       } catch (err) {
-        error = err;
+        error = err as Error;
       }
       expect(error).toEqual(new Error('Invalid Date'));
     });
@@ -75,7 +75,7 @@ describe('getYear', () => {
       try {
         getYear(beforeBanglaDate, { format: 'YY' });
       } catch (err) {
-        error = err;
+        error = err as Error;
       }
       expect(error).toEqual(new Error('Invalid Date'));
     });
@@ -88,7 +88,7 @@ describe('getYear', () => {
           calculationMethod: 'IN',
         });
       } catch (err) {
-        error = err;
+        error = err as Error;
       }
       expect(error).toEqual(new Error('Invalid Date'));
     });
