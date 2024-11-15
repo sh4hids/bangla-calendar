@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { DayFormat, MonthFormat, WeekDayFormat, YearFormat } from './types';
 
 export const convertNumbers = (data: any) => {
@@ -24,12 +25,11 @@ export const convertNumbers = (data: any) => {
   const input = data.toString();
   const { length } = input;
 
-  // eslint-disable-next-line no-plusplus
   for (let i = 0; i < length; i++) {
     if (Number.isNaN(parseFloat(input[i])) || Number.isNaN(input[i] - 0)) {
       result += input[i];
     } else {
-      result += numbers[input[i]];
+      result += numbers[input[i] as keyof typeof numbers];
     }
   }
   return result;
@@ -65,7 +65,6 @@ export const isLeapYear = (year: number = 0): boolean =>
 
 export const isValidDate = (date: any): boolean => {
   if (Object.prototype.toString.call(date) === '[object Date]') {
-    // eslint-disable-next-line no-restricted-globals
     if (isNaN(date)) {
       return false;
     }

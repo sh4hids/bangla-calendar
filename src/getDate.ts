@@ -16,7 +16,7 @@ export function getDate(
     throw new Error(errorMessage);
   }
 
-  const inputDate = new Date(date);
+  const inputDate = date;
   inputDate.setTime(
     inputDate.getTime() + (inputDate.getTimezoneOffset() + 360) * 60 * 1000
   );

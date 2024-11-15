@@ -68,7 +68,8 @@ function getDayIN(day: number, month: number, year: number): number {
   const calculatedJulianDate = startJulianDate + banglaYear * yearLength;
   let ps: number;
   let ns: number;
-  let banglaDay: number;
+  let banglaDay = 0;
+
   for (let i = 0; i < 12; i += 1) {
     ps = calculatedJulianDate + monthLengthIN[i];
     ns = calculatedJulianDate + monthLengthIN[i + 1];

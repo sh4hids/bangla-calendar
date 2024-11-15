@@ -20,7 +20,8 @@ const getMonthIN = (year: number, month: number, day: number) => {
   const calculatedJulianDate = startJulianDate + banglaYear * yearLength;
   let ps: number;
   let ns: number;
-  let banglaMonth: number;
+  let banglaMonth = 1;
+
   for (let i = 0; i < 12; i += 1) {
     ps = calculatedJulianDate + monthLengthIN[i];
     ns = calculatedJulianDate + monthLengthIN[i + 1];

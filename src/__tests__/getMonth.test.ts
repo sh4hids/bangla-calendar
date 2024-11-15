@@ -41,7 +41,7 @@ describe('getMonth', () => {
       try {
         getMonth(invalidDate);
       } catch (err) {
-        error = err;
+        error = err as Error;
       }
       expect(error).toEqual(new Error('Invalid Date'));
     });
@@ -51,7 +51,7 @@ describe('getMonth', () => {
       try {
         getMonth(invalidDate, { calculationMethod: 'IN' });
       } catch (err) {
-        error = err;
+        error = err as Error;
       }
       expect(error).toEqual(new Error('Invalid Date'));
     });
